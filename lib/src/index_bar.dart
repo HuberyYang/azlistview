@@ -305,7 +305,9 @@ class _IndexBarState extends State<IndexBar> {
       if (widget.options.ignoreDragCancel &&
           action == IndexBarDragDetails.actionCancel) {
       } else {
-        setState(() {});
+        Future.delayed(Duration(milliseconds: 1), () {
+          setState(() {});
+        });
       }
     }
   }
